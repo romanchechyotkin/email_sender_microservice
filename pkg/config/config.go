@@ -28,7 +28,7 @@ func GetConfig() *Config {
 		log.Println("parsing yaml config file")
 		instance = &Config{}
 
-		err := cleanenv.ReadConfig(path.Base("config.yaml"), instance)
+		err := cleanenv.ReadConfig(path.Join("/home", "chechyotka", "projects", "golang_projects", "car_booking_service", "email_sender_microservice", "config.yaml"), instance)
 		if err != nil {
 			help, _ := cleanenv.GetDescription(instance, nil)
 			log.Println(help)
