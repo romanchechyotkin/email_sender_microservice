@@ -11,9 +11,9 @@ func NewMongoClient(ctx context.Context, username, password, database string) (d
 	var mongoDBURL string
 
 	if username == "" && password == "" {
-		mongoDBURL = fmt.Sprintf("mongodb+srv://%s:%s@cluster0.xygrgb0.mongodb.net/emails", username, password)
+		mongoDBURL = fmt.Sprintf("mongodb+srv://%s:%s@cluster0.xygrgb0.mongodb.net/db", username, password)
 	} else {
-		mongoDBURL = fmt.Sprintf("mongodb+srv://%s:%s@cluster0.xygrgb0.mongodb.net/emails", username, password)
+		mongoDBURL = fmt.Sprintf("mongodb+srv://%s:%s@cluster0.xygrgb0.mongodb.net/db", username, password)
 	}
 
 	clientOpts := options.Client().ApplyURI(mongoDBURL)

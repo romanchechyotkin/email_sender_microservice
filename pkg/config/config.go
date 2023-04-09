@@ -18,6 +18,8 @@ type Config struct {
 		Database   string `yaml:"database"`
 		Collection string `yaml:"collection"`
 	}
+	Password string `yaml:"password"`
+	Email    string `yaml:"from_email"`
 }
 
 var instance *Config

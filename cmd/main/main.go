@@ -36,7 +36,9 @@ func main() {
 		log.Fatalf("failed to connect to database %v", err)
 	}
 	collection := db.Collection(cfg.Mongo.Collection)
-	srv := service.NewService(collection)
+	srv := service.NewService(collection, cfg.Password, cfg.Email)
+
+	//srv.SendEmail(ctx, "romanchechyotkin@gmail.com", "registration")
 
 	for {
 		ev := consumer.Poll(1000)
